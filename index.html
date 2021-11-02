@@ -462,11 +462,9 @@
                 progressVolume.value = this.isSongVolume;
                 if (this.config.currentIndex === undefined && this.isSave === false) {
                     this.currentIndex = 0;
-
                 } else {
                     this.currentIndex = this.config.currentIndex;
                     audio.currentTime = this.config.currentTime
-
                 }
             },
             nextSong() {
