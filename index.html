@@ -188,7 +188,7 @@
             render() {
                 const htmls = this.songs.map((song, index) => {
                     return `
-                        <div class="song ${index === this.currentIndex ? 'active' : ' '}" data-index=${index}>
+                        <div class="song${index === this.currentIndex ?' active' : ''}" data-index=${index}>
                             <div class="thumb" 
                                 style="background: url('${song.image}') top center / cover no-repeat">
                             </div>
@@ -280,6 +280,7 @@
                         const progressPercent = audio.currentTime / audio.duration * 100;
                         const minutes = Math.floor(audio.currentTime / 60);
                         const seconds = Math.floor(audio.currentTime - minutes * 60);
+
                         progressTime.value = progressPercent;
                         progressTimeValue.innerHTML = `0${minutes}:${seconds>=10?seconds:"0"+seconds}`;
                         if (this.isSave) {
