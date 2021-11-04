@@ -228,7 +228,6 @@
                     this.isSongVolume = e.target.value;
                     audio.volume = this.isSongVolume / 100;
                     progressVolume.value = this.isSongVolume
-                    console.log(this.isSongVolume)
                     progressVolumeValue.innerHTML = `${progressVolume.value}%`
                     this.setConfig("currentVolume", this.isSongVolume);
 
