@@ -389,7 +389,7 @@
                 this.isRepeat = this.config.isRepeat
                 this.isSave = this.config.isSave
                 this.isSongVolume = this.config.currentVolume;
-                audio.volume = this.config.currentVolume / 100
+                audio.volume = parseFloat((this.config.currentVolume / 100))
                 progressVolume.value = this.isSongVolume;
                 audio.currentTime = this.config.currentTime
                 this.currentIndex = this.config.currentIndex;
@@ -449,8 +449,8 @@
 
                 //Render playlist
                 this.render()
-
-                //hiển thị trạng thái ban đầu của btn Repeat&Random
+                console.log(parseFloat(this.config.currentVolume / 100))
+                    //hiển thị trạng thái ban đầu của btn Repeat&Random
                 randomBtn.classList.toggle('active', this.isRandom)
                 repeatBtn.classList.toggle('active', this.isRepeat)
                     // saveBtn.classList.toggle('active', this.isSave)
