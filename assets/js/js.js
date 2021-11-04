@@ -226,10 +226,10 @@
                 //Thay đổi âm lượng
                 progressVolume.oninput = (e) => {
                     this.isSongVolume = e.target.value;
-                    audio.volume = this.isSongVolume / 100;
+                    audio.volume = parseFloat(this.isSongVolume / 100);
                     progressVolume.value = this.isSongVolume
                     progressVolumeValue.innerHTML = `${progressVolume.value}%`
-                    this.setConfig("currentVolume", this.isSongVolume);
+                    this.setConfig("currentVolume", parseFloat(this.isSongVolume / 100));
 
                 };
 
@@ -274,28 +274,28 @@
                         e.preventDefault();
                         if (this.isSongVolume < 100) {
                             this.isSongVolume += 5
-                            audio.volume = this.isSongVolume / 100
+                            audio.volume = parseFloat(this.isSongVolume / 100)
                             progressVolume.value = this.isSongVolume
                         } else {
                             this.isSongVolume = 100
-                            audio.volume = this.isSongVolume / 100
+                            audio.volume = parseFloat(this.isSongVolume / 100)
                             progressVolume.value = this.isSongVolume
                         }
-                        this.setConfig("currentVolume", this.isSongVolume);
+                        this.setConfig("currentVolume", parseFloat(this.isSongVolume / 100));
                         progressVolumeValue.innerHTML = `${progressVolume.value}%`
                     }
                     if (e.keyCode === 40) {
                         e.preventDefault();
                         if (this.isSongVolume > 0) {
                             this.isSongVolume -= 5
-                            audio.volume = this.isSongVolume / 100
+                            audio.volume = parseFloat(this.isSongVolume / 100)
                             progressVolume.value = this.isSongVolume
                         } else {
                             this.isSongVolume = 0
-                            audio.volume = this.isSongVolume / 100
+                            audio.volume = parseFloat(this.isSongVolume / 100)
                             progressVolume.value = this.isSongVolume
                         }
-                        this.setConfig("currentVolume", this.isSongVolume);
+                        this.setConfig("currentVolume", parseFloat(this.isSongVolume / 100));
                         progressVolumeValue.innerHTML = `${progressVolume.value}%`
                     }
                     if (e.keyCode === 32) {
