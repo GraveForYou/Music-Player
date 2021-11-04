@@ -388,7 +388,6 @@
                 this.isRandom = this.config.isRandom
                 this.isRepeat = this.config.isRepeat
                 this.isSave = this.config.isSave
-                    // this.currentSong = this.config.currentSong
                 this.isSongVolume = this.config.currentVolume;
                 audio.volume = this.config.currentVolume / 100
                 progressVolume.value = this.isSongVolume;
