@@ -31,7 +31,7 @@
                 </div>
 
             </div>
-            <div class="btn btn-save d-none">
+            <div class="btn btn-save ">
                 <i class="fas fa-save"></i>
             </div>
             <!-- Control -->
@@ -288,11 +288,11 @@
 
                         progressTime.value = progressPercent;
                         progressTimeValue.innerHTML = `0${minutes}:${seconds>=10?seconds:"0"+seconds}`;
-                        if (this.isSave) {
-                            this.setConfig('currentTime', audio.currentTime)
-                        } else {
-                            this.setConfig('currentTime', 0)
-                        }
+                        this.setConfig('currentTime', audio.currentTime)
+                            // if (this.isSave) {
+                            // } else {
+                            //     this.setConfig('currentTime', 0)
+                            // }
                     }
                     if (audio.duration) {
                         const minutesDuration = Math.floor(audio.duration / 60);
@@ -431,13 +431,13 @@
                 }
 
                 //Click lưu currentSong & currentTime 
-                saveBtn.onclick = () => {
-                    this.isSave = !this.isSave;
-                    saveBtn.classList.toggle('active', this.isSave)
-                    this.playSaveInfo()
-                    this.setConfig('isSave', this.isSave)
+                // saveBtn.onclick = () => {
+                //     this.isSave = !this.isSave;
+                //     saveBtn.classList.toggle('active', this.isSave)
+                //     this.playSaveInfo()
+                //     this.setConfig('isSave', this.isSave)
 
-                }
+                // }
             },
             scrollToActiveSong() {
                 var view = '';
@@ -455,28 +455,30 @@
                 heading.textContent = this.currentSong.name
                 cdThumb.style.background = `url(${this.currentSong.image}) top center / cover no-repeat`
                 audio.src = this.currentSong.path
-                headTitle.textContent = this.currentSong.name
                 progressVolumeValue.innerHTML = `${progressVolume.value}%`
                 this.setConfig('currentSong', this.currentSong)
-                if (this.isSave) {
-                    this.playSaveInfo()
-                }
+                this.setConfig('currentIndex', this.currentIndex)
+                    // if (this.isSave) {
+                    //     this.playSaveInfo()
+                    // }
                 this.scrollToActiveSong()
             },
             loadConfig() {
                 this.isRandom = this.config.isRandom
                 this.isRepeat = this.config.isRepeat
                 this.isSave = this.config.isSave
-                this.currentSong = this.config.currentSong
+                    // this.currentSong = this.config.currentSong
                 this.isSongVolume = this.config.currentVolume;
                 audio.volume = this.config.currentVolume / 100
                 progressVolume.value = this.isSongVolume;
-                if (this.config.currentIndex === undefined && this.isSave === false) {
-                    this.currentIndex = 0;
-                } else {
-                    this.currentIndex = this.config.currentIndex;
-                    audio.currentTime = this.config.currentTime
-                }
+                audio.currentTime = this.config.currentTime
+                this.currentIndex = this.config.currentIndex;
+                // if (this.config.currentIndex === undefined && this.isSave === false) {
+                //     this.currentIndex = 0;
+                // } else {
+                //     this.currentIndex = this.config.currentIndex;
+                //     audio.currentTime = this.config.currentTime
+                // }
             },
             nextSong() {
                 this.currentIndex++
@@ -504,14 +506,14 @@
 
                 }
             },
-            playSaveInfo() {
-                if (this.isSave) {
-                    this.setConfig('currentIndex', this.currentIndex)
-                    this.setConfig('currentTime', audio.currentTime)
-                } else {
-                    this.setConfig('currentIndex', 0)
-                }
-            },
+            // playSaveInfo() {
+            //     if (this.isSave) {
+            //         this.setConfig('currentIndex', this.currentIndex)
+            //         this.setConfig('currentTime', audio.currentTime)
+            //     } else {
+            //         this.setConfig('currentIndex', 0)
+            //     }
+            // },
             start() {
                 //Gán cấu hình từ config vào app
                 this.loadConfig()
@@ -531,7 +533,7 @@
                 //hiển thị trạng thái ban đầu của btn Repeat&Random
                 randomBtn.classList.toggle('active', this.isRandom)
                 repeatBtn.classList.toggle('active', this.isRepeat)
-                saveBtn.classList.toggle('active', this.isSave)
+                    // saveBtn.classList.toggle('active', this.isSave)
 
             }
         }
