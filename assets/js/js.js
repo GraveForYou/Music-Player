@@ -226,10 +226,10 @@
                 //Thay đổi âm lượng
                 progressVolume.oninput = (e) => {
                     this.isSongVolume = e.target.value;
-                    audio.volume = parseFloat(this.isSongVolume / 100);
+                    audio.volume = this.isSongVolume / 100;
                     progressVolume.value = this.isSongVolume
                     progressVolumeValue.innerHTML = `${progressVolume.value}%`
-                    this.setConfig("currentVolume", parseFloat(this.isSongVolume / 100));
+                    this.setConfig("currentVolume", this.isSongVolume);
 
                 };
 
@@ -274,28 +274,28 @@
                         e.preventDefault();
                         if (this.isSongVolume < 100) {
                             this.isSongVolume += 5
-                            audio.volume = parseFloat(this.isSongVolume / 100)
+                            audio.volume = this.isSongVolume / 100
                             progressVolume.value = this.isSongVolume
                         } else {
                             this.isSongVolume = 100
-                            audio.volume = parseFloat(this.isSongVolume / 100)
+                            audio.volume = this.isSongVolume / 100
                             progressVolume.value = this.isSongVolume
                         }
-                        this.setConfig("currentVolume", parseFloat(this.isSongVolume / 100));
+                        this.setConfig("currentVolume", this.isSongVolume);
                         progressVolumeValue.innerHTML = `${progressVolume.value}%`
                     }
                     if (e.keyCode === 40) {
                         e.preventDefault();
                         if (this.isSongVolume > 0) {
                             this.isSongVolume -= 5
-                            audio.volume = parseFloat(this.isSongVolume / 100)
+                            audio.volume = this.isSongVolume / 100
                             progressVolume.value = this.isSongVolume
                         } else {
                             this.isSongVolume = 0
-                            audio.volume = parseFloat(this.isSongVolume / 100)
+                            audio.volume = this.isSongVolume / 100
                             progressVolume.value = this.isSongVolume
                         }
-                        this.setConfig("currentVolume", parseFloat(this.isSongVolume / 100));
+                        this.setConfig("currentVolume", this.isSongVolume);
                         progressVolumeValue.innerHTML = `${progressVolume.value}%`
                     }
                     if (e.keyCode === 32) {
@@ -389,7 +389,7 @@
                 this.isRepeat = this.config.isRepeat
                 this.isSave = this.config.isSave
                 this.isSongVolume = this.config.currentVolume;
-                audio.volume = parseFloat((this.config.currentVolume / 100))
+                audio.volume = this.config.currentVolume / 100
                 progressVolume.value = this.isSongVolume;
                 audio.currentTime = this.config.currentTime
                 this.currentIndex = this.config.currentIndex;
@@ -449,8 +449,8 @@
 
                 //Render playlist
                 this.render()
-                console.log(parseFloat(this.config.currentVolume / 100))
-                    //hiển thị trạng thái ban đầu của btn Repeat&Random
+
+                //hiển thị trạng thái ban đầu của btn Repeat&Random
                 randomBtn.classList.toggle('active', this.isRandom)
                 repeatBtn.classList.toggle('active', this.isRepeat)
                     // saveBtn.classList.toggle('active', this.isSave)
