@@ -376,6 +376,7 @@
                 heading.textContent = this.currentSong.name
                 cdThumb.style.background = `url(${this.currentSong.image}) top center / cover no-repeat`
                 audio.src = this.currentSong.path
+                headTitle.textContent = this.currentSong.name
                 progressVolumeValue.innerHTML = `${progressVolume.value}%`
                 this.setConfig('currentSong', this.currentSong)
                 this.setConfig('currentIndex', this.currentIndex)
