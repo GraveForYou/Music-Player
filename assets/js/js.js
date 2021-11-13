@@ -105,6 +105,11 @@
                 singer: 'Lý Viên Kiệt',
                 path: './assets/song/song15.mp3',
                 image: './assets/img/img-15.jpg'
+            }, {
+                name: 'Vây giữ',
+                singer: 'V t V',
+                path: './assets/song/song16.mp3',
+                image: './assets/img/img-16.jpeg'
             }],
 
             setConfig: function(key, value) {
