@@ -438,12 +438,12 @@ const app = {
         progressVolume.value = this.isSongVolume
         audio.currentTime = this.config.currentTime
         this.currentIndex = this.config.currentIndex
-        // if (this.config.currentIndex === undefined && this.isSave === false) {
-        //     this.currentIndex = 0;
-        // } else {
-        //     this.currentIndex = this.config.currentIndex;
-        //     audio.currentTime = this.config.currentTime
-        // }
+        if (this.config.currentIndex === undefined && this.isSave === false) {
+            this.currentIndex = 0
+        } else {
+            this.currentIndex = this.config.currentIndex
+            audio.currentTime = this.config.currentTime
+        }
     },
     nextSong() {
         this.currentIndex++
@@ -469,14 +469,14 @@ const app = {
             this.loadCurrentSong()
         }
     },
-    // playSaveInfo() {
-    //     if (this.isSave) {
-    //         this.setConfig('currentIndex', this.currentIndex)
-    //         this.setConfig('currentTime', audio.currentTime)
-    //     } else {
-    //         this.setConfig('currentIndex', 0)
-    //     }
-    // },
+    playSaveInfo() {
+        if (this.isSave) {
+            this.setConfig('currentIndex', this.currentIndex)
+            this.setConfig('currentTime', audio.currentTime)
+        } else {
+            this.setConfig('currentIndex', 0)
+        }
+    },
     start() {
         //Gán cấu hình từ config vào app
         this.loadConfig()
