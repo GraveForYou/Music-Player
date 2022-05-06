@@ -481,7 +481,7 @@ const app = {
     },
     start() {
         //Gán cấu hình từ config vào app
-        if(this.config==={}){
+        if(this.config!=={}){
             this.loadConfig()
         }
 
