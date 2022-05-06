@@ -436,8 +436,7 @@ const app = {
         this.isRepeat = this.config.isRepeat
         this.isSave = this.config.isSave
         this.isSongVolume = this.config.currentVolume
-        let volume = this.config.currentVolume / 100
-        audio.volume = volume ?? 0
+        audio.volume = this.config.currentVolume / 100 
         progressVolume.value = this.isSongVolume
         audio.currentTime = this.config.currentTime
         this.currentIndex = this.config.currentIndex
@@ -482,7 +481,9 @@ const app = {
     },
     start() {
         //Gán cấu hình từ config vào app
-        this.loadConfig()
+        if(this.config==={}){
+            this.loadConfig()
+        }
 
         //Định nghĩa các thuộc tính cho Object
         this.defineProperties()
