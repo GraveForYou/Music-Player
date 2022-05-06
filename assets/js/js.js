@@ -34,104 +34,104 @@ const app = {
         {
             name: 'Fly me to the moon',
             singer: 'Lofi Cover (Prod. YungRhythm)',
-            path: './assets/song/song1.mp3',
-            image: './assets/img/img-1.jpg',
+            path: 'assets/song/song1.mp3',
+            image: 'assets/img/img-1.jpg',
         },
         {
             name: 'Dĩ vẵng nhạt nhòa',
             singer: ' Lofi By Tama',
-            path: './assets/song/song2.mp3',
-            image: './assets/img/img-2.jpeg',
+            path: 'assets/song/song2.mp3',
+            image: 'assets/img/img-2.jpeg',
         },
         {
             name: 'Stay with me',
             singer: 'Chanyeol (EXO) ft. Punch',
-            path: './assets/song/song3.mp3',
-            image: './assets/img/img-3.jpg',
+            path: 'assets/song/song3.mp3',
+            image: 'assets/img/img-3.jpg',
         },
         {
             name: 'My eyes',
             singer: '10cm',
-            path: './assets/song/song4.mp3',
-            image: './assets/img/img-4.jpg',
+            path: 'assets/song/song4.mp3',
+            image: 'assets/img/img-4.jpg',
         },
         {
             name: 'Hush',
             singer: 'Lasse Lindh',
-            path: './assets/song/song5.mp3',
-            image: './assets/img/img-5.jpg',
+            path: 'assets/song/song5.mp3',
+            image: 'assets/img/img-5.jpg',
         },
         {
             name: 'You are so beautiful',
             singer: 'Eddy Kim',
-            path: './assets/song/song6.mp3',
-            image: './assets/img/img-6.jpg',
+            path: 'assets/song/song6.mp3',
+            image: 'assets/img/img-6.jpg',
         },
         {
             name: 'Mơ hồ',
             singer: 'Bùi Anh Tuấn',
-            path: './assets/song/song7.mp3',
-            image: './assets/img/img-7.jpg',
+            path: 'assets/song/song7.mp3',
+            image: 'assets/img/img-7.jpg',
         },
         {
             name: 'Thanh xuân',
             singer: 'Da LAB',
-            path: './assets/song/song8.mp3',
-            image: './assets/img/img-8.jpg',
+            path: 'assets/song/song8.mp3',
+            image: 'assets/img/img-8.jpg',
         },
         {
             name: 'Lily',
             singer: 'Alan Walker, K-391 & Emelie Hollow',
-            path: './assets/song/song9.mp3',
-            image: './assets/img/img-9.jpg',
+            path: 'assets/song/song9.mp3',
+            image: 'assets/img/img-9.jpg',
         },
         {
             name: 'Señorita',
             singer: 'Shawn Mendes, Camila Cabello',
-            path: './assets/song/song10.mp3',
-            image: './assets/img/img-10.jpg',
+            path: 'assets/song/song10.mp3',
+            image: 'assets/img/img-10.jpg',
         },
         {
             name: 'Ái nộ',
             singer: 'Masew x Khoi Vu',
-            path: './assets/song/song11.mp3',
-            image: './assets/img/img-11.jpeg',
+            path: 'assets/song/song11.mp3',
+            image: 'assets/img/img-11.jpeg',
         },
         {
             name: 'Build a b*tch',
             singer: 'Pella ',
-            path: './assets/song/song12.mp4',
-            image: './assets/img/img-12.jpeg',
+            path: 'assets/song/song12.mp4',
+            image: 'assets/img/img-12.jpeg',
         },
         {
             name: 'Take me hand',
             singer: 'Pella ',
-            path: './assets/song/song13.mp4',
-            image: './assets/img/img-13.jpeg',
+            path: 'assets/song/song13.mp4',
+            image: 'assets/img/img-13.jpeg',
         },
         {
             name: 'Chỉ Một Lần Thôi Em Nhé Hãy Để Anh Yêu Em',
             singer: 'Phạm Đình Thái Ngân',
-            path: './assets/song/song14.mp4',
-            image: './assets/img/img-14.jpg',
+            path: 'assets/song/song14.mp4',
+            image: 'assets/img/img-14.jpg',
         },
         {
             name: 'Đại Thiên Bồng',
             singer: 'Lý Viên Kiệt',
-            path: './assets/song/song15.mp3',
-            image: './assets/img/img-15.jpg',
+            path: 'assets/song/song15.mp3',
+            image: 'assets/img/img-15.jpg',
         },
         {
             name: 'Vây giữ',
             singer: 'V t V',
-            path: './assets/song/song16.mp3',
-            image: './assets/img/img-16.jpeg',
+            path: 'assets/song/song16.mp3',
+            image: 'assets/img/img-16.jpeg',
         },
         {
             name: 'Fa b',
             singer: '...',
-            path: './assets/song/song17.mp4',
-            image: './assets/img/img-17.jpg',
+            path: 'assets/song/song17.mp4',
+            image: 'assets/img/img-17.jpg',
         },
     ],
 
@@ -382,6 +382,7 @@ const app = {
                     //get Index song
                     //console.log(songNode.dataset.index)
                     this.currentIndex = Number(songNode.dataset.index)
+
                     this.loadCurrentSong()
                     this.render()
                     this.scrollToActiveSong()
@@ -417,6 +418,7 @@ const app = {
         }, 300)
     },
     loadCurrentSong() {
+        console.log(this)
         heading.textContent = this.currentSong.name
         cdThumb.style.background = `url(${this.currentSong.image}) top center / cover no-repeat`
         audio.src = this.currentSong.path
