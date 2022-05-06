@@ -425,11 +425,11 @@ const app = {
 		audio.src = this.currentSong.path
 		headTitle.textContent = this.currentSong.name
 		progressVolumeValue.innerHTML = `${progressVolume.value}%`
-		isRandom = this.isRandom
-		isRepeat = this.isRepeat
-		isSave = this.isSave
-		isTimeupdate = this.isTimeupdate
-		isSongVolume = this.isSongVolume
+		this.isRandom = this.isRandom
+		this.isRepeat = this.isRepeat
+		this.isSave = this.isSave
+		this.isTimeupdate = this.isTimeupdate
+		this.isSongVolume = this.isSongVolume
 		this.setConfig("currentSong", this.currentSong)
 		this.setConfig("currentIndex", this.currentIndex)
 		this.setConfig("currentTime", audio.currentTime)
