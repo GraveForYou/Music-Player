@@ -496,7 +496,7 @@ const app = {
 
 		if (Object.values(this.config).length !== 0) {
 			console.log(this.config)
-			this.loadConfig()
+			if (!this.isSongVolume === "undefined") this.loadConfig()
 		}
 
 		//Định nghĩa các thuộc tính cho Object
