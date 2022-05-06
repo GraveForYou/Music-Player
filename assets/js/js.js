@@ -432,10 +432,10 @@ const app = {
 		isSongVolume = this.isSongVolume
 		this.setConfig("currentSong", this.currentSong)
 		this.setConfig("currentIndex", this.currentIndex)
-		// this.setConfig("currentTime", audio.currentTime)
-		// this.setConfig("isRepeat", this.isRepeat)
-		// this.setConfig("isRandom", this.isRandom)
-		// this.setConfig("currentVolume", this.isSongVolume)
+		this.setConfig("currentTime", audio.currentTime)
+		this.setConfig("isRepeat", this.isRepeat)
+		this.setConfig("isRandom", this.isRandom)
+		this.setConfig("currentVolume", this.isSongVolume)
 		// if (this.isSave) {
 		//     this.playSaveInfo()
 		// }
@@ -496,7 +496,7 @@ const app = {
 
 		if (Object.values(this.config).length !== 0) {
 			console.log(this.config)
-			if (!this.isSongVolume === "undefined") this.loadConfig()
+			this.loadConfig()
 		}
 
 		//Định nghĩa các thuộc tính cho Object
